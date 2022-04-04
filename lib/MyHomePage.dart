@@ -21,12 +21,7 @@ class MyHomePage extends HookWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                (_isLoading.value)
-                    ? Text(
-                        'test ' + countProvider.state.toString(),
-                        style: TextStyle(fontSize: 50),
-                      )
-                    : Text(
+                 Text(
                         'test ' + countProvider.state.toString(),
                         style: TextStyle(fontSize: 50),
                       ),
@@ -43,10 +38,18 @@ class MyHomePage extends HookWidget {
             children: [
               ElevatedButton(
                 onPressed: () {
-                  _isLoading.value = !_isLoading.value;
+                  
                   countProvider.increase();
                 },
-                child: Text('Click Me!'),
+                child: Text('Add countProvider!'),
+              ),
+              SizedBox(width: 10,)
+              ,ElevatedButton(
+                onPressed: () {
+                  _isLoading.value = !_isLoading.value;
+                  
+                },
+                child: Text('Toggle _isLoading useState'),
               )
             ],
           )),
